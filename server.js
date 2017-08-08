@@ -66,7 +66,9 @@ var htmltemplate = `
     </div>
           </body>
           </html>
-          `;}
+          `;
+          return htmlTemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
