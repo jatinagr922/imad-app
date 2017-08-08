@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var articleOne = {
     title: 'Article One | JATIN AGRAWAL',
-    heading: 'Article One',
+    heading: 'Article-One',
     date: '08/08/2017',
     content: `
             <h5>
@@ -38,7 +38,7 @@ var heading = data.heading;
 var content = data.content;
 
 
-var htmltemplate = `
+var htmlTemplate = `
 <html>
 <head>
     <title>
