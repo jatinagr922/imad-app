@@ -35,7 +35,7 @@ var articleOne = {
 <html>
 <head>
     <title>
-        Article-one|JATIN AGRAWAL
+        ${title}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/ui/style.css" rel="stylesheet" />
@@ -48,10 +48,10 @@ var articleOne = {
         </div>
         <hr>
         <h3>
-            Article-One
+           ${heading}
         </h3>
         <div>
-            SEP 08/08/2017
+            ${date}
         </div>
         <div>
            ${content}
@@ -59,13 +59,7 @@ var articleOne = {
     </div>
           </body>
           </html>
-
-
-
-
-
-
-`
+          `
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
