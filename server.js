@@ -5,6 +5,40 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title: 'Article One | JATIN AGRAWAL',
+    heading: 'Article One',
+    date: '08/08/2017',
+    content: `
+            <h5>
+            <p>
+            
+                THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.
+                
+            
+            </p>
+            </h5>
+            <h5>
+            <p>
+                THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.
+                
+            </p>
+            </h5>
+            <h5>
+            <p>
+                THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.THIS IS THE CONTENT FOR MY FIRST WEB PAGE.
+            </p>
+            </h5> `
+    
+};
+
+
+
+
+
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
