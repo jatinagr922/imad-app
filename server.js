@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articles={ 
+`article-one' : {
     title: 'Article One | JATIN AGRAWAL',
     heading: 'Article-One',
     date: '08/08/2017',
@@ -30,6 +31,57 @@ var articleOne = {
             </p>
             </h5> `
     
+},
+`article-two' : {
+     title: 'Article Two | JATIN AGRAWAL',
+    heading: 'Article-Two',
+    date: '08/08/2017',
+    content: `
+            <h5>
+            <p>
+            
+                THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.
+                
+            
+            </p>
+            </h5>
+            <h5>
+            <p>
+                 THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.
+                
+            </p>
+            </h5>
+            <h5>
+            <p>
+                THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.THIS IS THE CONTENT FOR MY SECOND WEB PAGE.
+            </p>
+            </h5> `
+},
+`article-three' : {
+     title: 'Article Three | JATIN AGRAWAL',
+    heading: 'Article-Three',
+    date: '08/08/2017',
+    content: `
+            <h5>
+            <p>
+            
+                THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.
+                
+            
+            </p>
+            </h5>
+            <h5>
+            <p>
+                THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.
+                
+            </p>
+            </h5>
+            <h5>
+            <p>
+                THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.THIS IS THE CONTENT FOR MY THIRD WEB PAGE.
+            </p>
+            </h5> `
+}
 };
 function createTemplate (data) {
 var title = data.title;
@@ -73,15 +125,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res){
-   res.send(createTemplate(articleOne));
+app.get(':articlename', function (req, res){
+    //articlename = article-one
+    //articles[articlename] = {} content object for article-one
+    var articlename = req.params.articlename;
+   res.send(createTemplate(articles[articlename]));
 });
-app.get('/article-two', function (req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/article-three', function (req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
