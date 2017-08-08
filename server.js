@@ -31,6 +31,7 @@ var articleOne = {
             </h5> `
     
 };
+function createTemplate (data) {
                   var htmltemplate = `
 <html>
 <head>
@@ -59,7 +60,7 @@ var articleOne = {
     </div>
           </body>
           </html>
-          `
+          `;}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
