@@ -14,6 +14,7 @@ THIS IS MY FIRST WEB APP
 </p>`
     
 };
+function createTemplate (data) {
 var template= `
 <html>
 <head>
@@ -34,7 +35,7 @@ var template= `
     </div>
     </body>
 </html>`;
-
+}
 
 
 app.get('/', function (req, res) {
