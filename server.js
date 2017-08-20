@@ -15,6 +15,11 @@ THIS IS MY FIRST WEB APP
     
 };
 function createTemplate (data) {
+var title=data.title;    
+    var date=data.date;
+    var heading=data.heading;
+    var content=data.content;
+
 var template= `
 <html>
 <head>
