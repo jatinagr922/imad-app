@@ -38,7 +38,8 @@ var title=data.title;
     <div>$(content) </div>
     </div>
     </body>
-</html>`;
+</html>
+`;
 return htmlTemplate;
 }
 
